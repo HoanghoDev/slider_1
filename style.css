@@ -8,13 +8,8 @@ body{
 a{
     text-decoration: none;
 }
-:root{
-    --width-pc: 1140px;
-    --width-thumbnail: 150px;
-    --height-thumbnail: 220px;
-}
 header{
-    width: var(--width-pc);
+    width: 1140px;
     max-width: 80%;
     margin: auto;
     height: 50px;
@@ -49,7 +44,7 @@ header a{
 .carousel .list .item .content{
     position: absolute;
     top: 20%;
-    width: var(--width-pc);
+    width: 1140px;
     max-width: 80%;
     left: 50%;
     transform: translateX(-50%);
@@ -95,22 +90,14 @@ header a{
     position: absolute;
     bottom: 50px;
     left: 50%;
-    width: 50%;
-    height: var(--height-thumbnail);
-    z-index: 100;
-    overflow: hidden;
-}
-.listThumbnail{
     width: max-content;
+    z-index: 100;
     display: flex;
     gap: 20px;
-    position: absolute;
-    transition: left 1.5s;
-    left: 0px;
 }
 .thumbnail .item{
-    width: var(--width-thumbnail);
-    height: var(--height-thumbnail);
+    width: 150px;
+    height: 220px;
     flex-shrink: 0;
     position: relative;
 }
@@ -200,8 +187,8 @@ header a{
 }
 /* create animation when next click */
 .carousel.next .list .item:nth-child(1) img{
-    width: var(--width-thumbnail);
-    height: var(--height-thumbnail);
+    width: 150px;
+    height: 220px;
     position: absolute;
     bottom: 50px;
     left: 50%;
@@ -218,7 +205,7 @@ header a{
     }
 }
 
-.carousel.next .listThumbnail .item:nth-last-child(1){
+.carousel.next .thumbnail .item:nth-last-child(1){
     overflow: hidden;
     animation: showThumbnail .5s linear 1 forwards;
 }
@@ -231,13 +218,13 @@ header a{
         opacity: 0;
     }
 }
-.carousel.next .listThumbnail{
+.carousel.next .thumbnail{
     animation: effectNext .5s linear 1 forwards;
 }
 
 @keyframes effectNext{
     from{
-        transform: translateX(var(--width-thumbnail));
+        transform: translateX(150px);
     }
 }
 
@@ -277,15 +264,15 @@ header a{
 }
 @keyframes outFrame{
     to{
-        width: var(--width-thumbnail);
-        height: var(--height-thumbnail);
+        width: 150px;
+        height: 220px;
         bottom: 50px;
         left: 50%;
         border-radius: 20px;
     }
 }
 
-.carousel.prev .listThumbnail .item:nth-child(1){
+.carousel.prev .thumbnail .item:nth-child(1){
     overflow: hidden;
     opacity: 0;
     animation: showThumbnail .5s linear 1 forwards;
@@ -305,7 +292,7 @@ header a{
 
 @keyframes contentOut{
     to{
-        transform: translateY(-50px);
+        transform: translateY(-150px);
         filter: blur(20px);
         opacity: 0;
     }
